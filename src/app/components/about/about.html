@@ -1,8 +1,8 @@
 <section class="about section" id="about">
   <div class="about-inner">
-    <div class="section-head" appReveal="slide-up">
-      <span class="eyebrow">About</span>
-      <h2>A bit about <span class="gradient-text">me</span>.</h2>
+    <div class="section-head">
+      <span class="eyebrow" appReveal="fade">01 / About</span>
+      <h2 appMaskReveal>A bit about <span class="hl">me</span>.</h2>
     </div>
 
     <div class="about-body">
@@ -10,19 +10,19 @@
 
       <div class="stats">
         <div class="stat" appReveal="slide-up" [revealDelay]="160">
-          <div class="stat-num">{{ profile.yearsAtAccenture }}</div>
+          <div class="stat-num" appCountUp>{{ profile.yearsAtAccenture }}</div>
           <div class="stat-label">Years at Accenture</div>
         </div>
         <div class="stat" appReveal="slide-up" [revealDelay]="220">
-          <div class="stat-num">{{ profile.projects.length }}</div>
+          <div class="stat-num" appCountUp>{{ profile.projects.length }}</div>
           <div class="stat-label">Projects shipped</div>
         </div>
         <div class="stat" appReveal="slide-up" [revealDelay]="280">
-          <div class="stat-num">{{ profile.certifications.length }}</div>
+          <div class="stat-num" appCountUp>{{ profile.certifications.length }}</div>
           <div class="stat-label">Certifications</div>
         </div>
         <div class="stat" appReveal="slide-up" [revealDelay]="340">
-          <div class="stat-num">v15→v20</div>
+          <div class="stat-num" appCountUp>v15→20</div>
           <div class="stat-label">Angular upgrades led</div>
         </div>
       </div>

@@ -1,78 +1,48 @@
 :host { display: block; }
 
-.section {
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 96px 24px;
-}
-
-.section-head { margin-bottom: 40px; }
-.eyebrow {
-  display: inline-block;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--ink-500);
-  padding-bottom: 8px;
-  border-bottom: 2px solid;
-  border-image: var(--gradient-warm) 1;
-  margin-bottom: 18px;
-}
-.section-head h2 {
-  font-size: clamp(2rem, 4vw, 2.75rem);
-  font-weight: 700;
-}
-
 .about-body {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-  gap: 56px;
-  align-items: center;
+  gap: 64px;
+  align-items: start;
 }
 
 .bio {
-  font-size: 1.08rem;
-  color: var(--ink-700);
-  max-width: 60ch;
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+  max-width: 58ch;
+  line-height: 1.75;
 }
 
 .stats {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
+  gap: 0 32px;
 }
 
 .stat {
-  padding: 22px 20px;
-  background: var(--surface-elevated);
-  border: 1px solid var(--border-subtle);
-  border-radius: 16px;
-  box-shadow: var(--shadow-sm);
-  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+  padding: 20px 0 24px;
+  border-top: 1px solid var(--ink);
+  transition: border-color 250ms var(--ease);
 }
-.stat:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
-  border-color: color-mix(in srgb, var(--vivid-pink) 30%, var(--border-subtle));
-}
+
 .stat-num {
-  font-family: "Inter Tight", "Inter", sans-serif;
-  font-size: 1.85rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  background: var(--gradient-warm);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3vw, 2.5rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--ink);
 }
+
 .stat-label {
-  margin-top: 4px;
-  font-size: 13px;
-  color: var(--ink-500);
-  font-weight: 500;
+  margin-top: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
 }
 
 @media (max-width: 880px) {
-  .about-body { grid-template-columns: 1fr; gap: 32px; }
+  .about-body { grid-template-columns: 1fr; gap: 40px; }
 }

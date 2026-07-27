@@ -1,7 +1,7 @@
 <section class="education section" id="education">
-  <div class="section-head" appReveal="slide-up">
-    <span class="eyebrow">Education & Certifications</span>
-    <h2>Foundations & <span class="gradient-text">credentials</span>.</h2>
+  <div class="section-head">
+    <span class="eyebrow" appReveal="fade">05 / Education &amp; Certifications</span>
+    <h2 appMaskReveal>Foundations &amp; credentials.</h2>
   </div>
 
   <div class="grid">
@@ -9,14 +9,9 @@
       <h3 class="col-title" appReveal="slide-up">Education</h3>
       @for (edu of profile.education; track edu.school; let i = $index) {
         <article class="edu-card" appReveal="slide-up" [revealDelay]="80 + 60 * i">
-          <div class="ic" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6"/><path d="M2 10 12 5l10 5-10 5L2 10Z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-          </div>
-          <div>
-            <h4>{{ edu.school }}</h4>
-            <p class="muted">{{ edu.degree }}</p>
-            <p class="date">{{ edu.date }}</p>
-          </div>
+          <h4>{{ edu.school }}</h4>
+          <p class="degree">{{ edu.degree }}</p>
+          <p class="date">{{ edu.date }}</p>
         </article>
       }
     </div>

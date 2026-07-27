@@ -1,113 +1,45 @@
 :host { display: block; }
 
-.section {
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 96px 24px;
+.jobs {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
 }
 
-.section-head { margin-bottom: 40px; }
-.eyebrow {
-  display: inline-block;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--ink-500);
-  padding-bottom: 8px;
-  border-bottom: 2px solid;
-  border-image: var(--gradient-warm) 1;
-  margin-bottom: 18px;
-}
-.section-head h2 {
-  font-size: clamp(2rem, 4vw, 2.75rem);
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-.lede { color: var(--ink-500); font-size: 1.02rem; max-width: 62ch; }
-
-.timeline {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  position: relative;
-}
-.timeline::before {
-  content: "";
-  position: absolute;
-  left: 11px;
-  top: 8px;
-  bottom: 8px;
-  width: 2px;
-  background: linear-gradient(
-    180deg,
-    color-mix(in srgb, var(--orange-red) 60%, transparent),
-    color-mix(in srgb, var(--electric-violet) 60%, transparent)
-  );
-  border-radius: 2px;
+.job {
+  border-top: 1px solid var(--ink);
+  padding-top: 28px;
 }
 
-.t-item {
-  position: relative;
-  padding-left: 40px;
-  margin-bottom: 22px;
-}
-
-.t-dot {
-  position: absolute;
-  left: 4px;
-  top: 22px;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: var(--surface-elevated);
-  border: 3px solid var(--vivid-pink);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--vivid-pink) 18%, transparent);
-}
-
-.t-card {
-  padding: 22px 24px;
-  background: var(--surface-elevated);
-  border: 1px solid var(--border-subtle);
-  border-radius: 16px;
-  box-shadow: var(--shadow-sm);
-  transition: transform 240ms ease, box-shadow 240ms ease;
-}
-.t-card:hover {
-  transform: translateX(2px);
-  box-shadow: var(--shadow-md);
-}
-
-.t-card header {
+.job header {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 16px;
+  gap: 8px 24px;
   justify-content: space-between;
   align-items: baseline;
-  margin-bottom: 14px;
+  margin-bottom: 24px;
 }
 
-.t-card h3 {
-  font-size: 1.15rem;
+.job h3 {
+  font-size: clamp(1.25rem, 2.4vw, 1.6rem);
   font-weight: 600;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 
 .company {
-  font-size: 14px;
-  color: var(--ink-700);
-  font-weight: 500;
-  margin-top: 2px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-top: 8px;
 }
-.company .muted { color: var(--ink-500); font-weight: 400; }
 
 .dates {
-  font-size: 12.5px;
-  font-weight: 600;
-  color: var(--ink-500);
-  padding: 4px 10px;
-  background: var(--ink-100);
-  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--ink-mute);
   white-space: nowrap;
 }
 
@@ -117,38 +49,37 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
+  max-width: 78ch;
 }
 .bullets li {
   position: relative;
-  padding-left: 22px;
+  padding-left: 26px;
   font-size: 14.5px;
-  color: var(--ink-700);
-  line-height: 1.55;
+  color: var(--ink-soft);
+  line-height: 1.65;
 }
 .bullets li::before {
   content: "";
   position: absolute;
-  left: 4px;
-  top: 9px;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--gradient-warm);
+  left: 2px;
+  top: 10px;
+  width: 10px;
+  height: 1px;
+  background: var(--ink);
 }
 
 .leadership {
-  margin-top: 28px;
-  padding: 18px 22px;
-  background: color-mix(in srgb, var(--vivid-pink) 5%, var(--surface-elevated));
-  border: 1px solid color-mix(in srgb, var(--vivid-pink) 25%, var(--border-subtle));
-  border-radius: 14px;
-  color: var(--ink-700);
+  margin-top: 48px;
+  padding: 24px 28px;
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--ink);
+  color: var(--ink-soft);
   font-size: 14.5px;
+  max-width: 78ch;
 }
-.leadership strong { color: var(--ink-900); }
+.leadership strong { color: var(--ink); }
 
 @media (max-width: 600px) {
-  .t-card header { flex-direction: column; gap: 8px; }
-  .dates { align-self: flex-start; }
+  .job header { flex-direction: column; gap: 4px; }
 }

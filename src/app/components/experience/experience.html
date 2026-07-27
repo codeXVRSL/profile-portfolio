@@ -1,31 +1,28 @@
 <section class="experience section" id="experience">
-  <div class="section-head" appReveal="slide-up">
-    <span class="eyebrow">Experience</span>
-    <h2>Where I've <span class="gradient-text">shipped</span>.</h2>
-    <p class="lede">A snapshot of the work, the upgrades, and the impact.</p>
+  <div class="section-head">
+    <span class="eyebrow" appReveal="fade">03 / Experience</span>
+    <h2 appMaskReveal>Where I've <span class="hl">shipped</span>.</h2>
+    <p class="lede" appReveal="slide-up" [revealDelay]="120">A snapshot of the work, the upgrades, and the impact.</p>
   </div>
 
-  <ol class="timeline">
+  <div class="jobs">
     @for (entry of profile.experience; track entry.company; let i = $index) {
-      <li class="t-item" appReveal="slide-up" [revealDelay]="60 * i">
-        <span class="t-dot" aria-hidden="true"></span>
-        <div class="t-card">
-          <header>
-            <div>
-              <h3>{{ entry.role }}</h3>
-              <p class="company">{{ entry.company }} · <span class="muted">{{ entry.location }}</span></p>
-            </div>
-            <span class="dates">{{ entry.start }} – {{ entry.end }}</span>
-          </header>
-          <ul class="bullets">
-            @for (bullet of entry.bullets; track bullet) {
-              <li>{{ bullet }}</li>
-            }
-          </ul>
-        </div>
-      </li>
+      <article class="job" appReveal="slide-up" [revealDelay]="60 * i">
+        <header>
+          <div>
+            <h3>{{ entry.role }}</h3>
+            <p class="company">{{ entry.company }} — {{ entry.location }}</p>
+          </div>
+          <span class="dates">{{ entry.start }} — {{ entry.end }}</span>
+        </header>
+        <ul class="bullets">
+          @for (bullet of entry.bullets; track bullet; let bi = $index) {
+            <li appReveal="slide-up" [revealDelay]="40 * bi">{{ bullet }}</li>
+          }
+        </ul>
+      </article>
     }
-  </ol>
+  </div>
 
   <p class="leadership" appReveal="fade">
     <strong>Leadership.</strong> {{ profile.leadership }}

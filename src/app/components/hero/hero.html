@@ -1,77 +1,55 @@
 <section class="hero" id="top">
   <div class="hero-inner">
-    <div class="hero-copy">
-      <p class="kicker" appReveal="fade">Hello — I'm</p>
-      <h1 appReveal="slide-up" [revealDelay]="60">
-        <span class="gradient-text">Christian Jay</span><br />
-        De La Cruz.
-      </h1>
-      <p class="role" appReveal="slide-up" [revealDelay]="140">
-        {{ profile.title }} · <span class="muted">{{ profile.subtitle }}</span>
-      </p>
-      <p class="tagline" appReveal="slide-up" [revealDelay]="220">
+    <p class="kicker" appReveal="fade">{{ profile.subtitle }}</p>
+
+    <h1 class="headline" appMaskReveal [maskImmediate]="true" [maskDelay]="0.15">
+      <span class="line">Christian Jay</span>
+      <span class="line">De La Cruz<span class="mark">.</span></span>
+    </h1>
+
+    <div class="hero-grid">
+      <p class="tagline" appReveal="slide-up" [revealDelay]="180">
         {{ profile.tagline }}
       </p>
-
-      <div class="cta-row" appReveal="slide-up" [revealDelay]="320">
-        <a class="btn btn-primary" href="#projects">
-          <span>View Projects</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-               stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M5 12h14"/><path d="m13 5 7 7-7 7"/>
-          </svg>
-        </a>
-        <a
-          class="btn btn-secondary"
-          [href]="profile.resumeFile"
-          [attr.download]="profile.resumeDownloadName"
-        >
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-               stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-            <polyline points="7 10 12 15 17 10"/>
-            <line x1="12" y1="15" x2="12" y2="3"/>
-          </svg>
-          <span>Download Resume</span>
-        </a>
-        <a class="btn btn-ghost" href="#contact">Get in Touch</a>
-      </div>
-
-      <div class="meta-row" appReveal="fade" [revealDelay]="400">
-        <span class="meta-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-               stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0Z"/>
-            <circle cx="12" cy="10" r="3"/>
-          </svg>
-          {{ profile.location }}
-        </span>
+      <div class="hero-meta" appReveal="slide-up" [revealDelay]="240">
         <span class="meta-item available">
           <span class="pulse" aria-hidden="true"></span>
-          Open to collaborate
+          Open to new roles
         </span>
+        <span class="meta-item">{{ profile.location }}</span>
       </div>
     </div>
 
-    <div class="hero-art" appReveal="scale" [revealDelay]="120">
-      <div class="orb-wrap">
-        <div class="orb" aria-hidden="true">
-          <div class="orb-inner">{{ profile.initials }}</div>
-        </div>
-        <span class="chip chip-1" aria-hidden="true">Angular</span>
-        <span class="chip chip-2" aria-hidden="true">.NET</span>
-        <span class="chip chip-3" aria-hidden="true">AWS</span>
-        <span class="chip chip-4" aria-hidden="true">Ionic</span>
-        <span class="chip chip-5" aria-hidden="true">Azure</span>
-      </div>
+    <div class="cta-row" appReveal="slide-up" [revealDelay]="320">
+      <a class="btn btn-solid" href="#projects" appMagnetic [magneticStrength]="0.28">
+        <span>View projects</span>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14"/><path d="m13 5 7 7-7 7"/>
+        </svg>
+      </a>
+      <a
+        class="btn btn-outline"
+        appMagnetic
+        [magneticStrength]="0.28"
+        [href]="profile.resumeFile"
+        [attr.download]="profile.resumeDownloadName"
+      >
+        <span>Download resume</span>
+      </a>
+      <a class="btn btn-ghost" href="#contact">Get in touch</a>
     </div>
   </div>
 
-  <div class="scroll-hint" aria-hidden="true">
-    <span>scroll</span>
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M12 5v14"/><path d="m19 12-7 7-7-7"/>
-    </svg>
+  <div class="ticker" aria-hidden="true" appReveal="fade" [revealDelay]="450">
+    <div class="ticker-track">
+      @for (pass of [0, 1]; track pass) {
+        <span class="ticker-group">
+          @for (item of ticker; track item) {
+            <span class="ticker-item">{{ item }}</span>
+          }
+        </span>
+      }
+    </div>
   </div>
 </section>

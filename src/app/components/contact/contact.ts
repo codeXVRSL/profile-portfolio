@@ -1,11 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { profile } from '../../data/profile';
 import { RevealDirective } from '../../directives/reveal.directive';
+import { MaskRevealDirective } from '../../directives/mask-reveal.directive';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [RevealDirective],
+  imports: [RevealDirective, MaskRevealDirective],
   templateUrl: './contact.html',
   styleUrl: './contact.css',
 })

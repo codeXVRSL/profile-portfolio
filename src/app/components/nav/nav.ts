@@ -1,5 +1,6 @@
-import { Component, HostListener, signal } from '@angular/core';
+import { Component, HostListener, inject, signal } from '@angular/core';
 import { profile } from '../../data/profile';
+import { ThemeService } from '../../theme';
 
 @Component({
   selector: 'app-nav',
@@ -8,9 +9,12 @@ import { profile } from '../../data/profile';
   styleUrl: './nav.css',
 })
 export class NavComponent {
+  private readonly themeService = inject(ThemeService);
+
   protected readonly profile = profile;
   protected readonly scrolled = signal(false);
   protected readonly menuOpen = signal(false);
+  protected readonly theme = this.themeService.theme;
   protected readonly links = [
     { id: 'about', label: 'About' },
     { id: 'skills', label: 'Skills' },
@@ -22,6 +26,10 @@ export class NavComponent {
   @HostListener('window:scroll')
   onScroll(): void {
     this.scrolled.set(window.scrollY > 16);
+  }
+
+  toggleTheme(): void {
+    this.themeService.toggle();
   }
 
   toggleMenu(): void {
